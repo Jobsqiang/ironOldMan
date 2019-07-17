@@ -3,6 +3,7 @@
 
 <mapper namespace="com.qiangjiang.ironOldMan.mapper.UserMapper">
     <insert id="insert" parameterType="com.qiangjiang.ironOldMan.model.User">
-        insert into tbl_user (id,username,password,token) value (#{id},#{userName},#{passWord},#{token})
+        insert into tbl_user (id,username,password,token,myOrderNo,payWayType,extra,settleUnitID,code,message,messageParams,traceID)
+        value (#{id},#{userName},#{passWord},#{token},#{myOrderNo},#{payWayType},#{extra},#{settleUnitID},#{code},#{message},#{messageParams},#{traceID})
     </insert>
 </mapper>

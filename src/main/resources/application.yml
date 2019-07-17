@@ -25,3 +25,13 @@ spring:
     port: 5672
     username: guest
     password: guest
+pay:
+  props:
+    wmht:
+      scan-address: http://payapi.mch.weixin.semoor.cn/pay/micropay
+      notify-address: www.baidu.com
+      expire-time: 90
+      app-id: wx94d59d7406b6cb82
+      mch-id: 1458748802
+      mch-key: hM3gyiQQ2TMKaWSDas4iQABO5y48EAuJ
+
