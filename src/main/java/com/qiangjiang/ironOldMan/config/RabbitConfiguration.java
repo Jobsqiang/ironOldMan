@@ -1,15 +1,18 @@
 package com.qiangjiang.ironOldMan.config;
 
 import org.springframework.amqp.core.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class RabbitConfiguration {
+    @Autowired
+    private RabbitMqProps rabbitMqProps;
 
     @Bean
     public Queue userQueue(AmqpAdmin amqpAdmin){
-        String queueName = "dev_user_queue";
+        String queueName = rabbitMqProps.getUserQuene();
         Queue queue = new Queue(queueName,true);
         amqpAdmin.declareQueue(queue);
         return queue;
@@ -25,7 +28,7 @@ public class RabbitConfiguration {
 
     @Bean
     public DirectExchange userExchange(AmqpAdmin amqpAdmin){
-        String exchangeName = "dev_user_exchange";
+        String exchangeName = rabbitMqProps.getUserExchange();
         DirectExchange exchange = new DirectExchange(exchangeName);
 //        exchange.setDelayed(true);
         amqpAdmin.declareExchange(exchange);

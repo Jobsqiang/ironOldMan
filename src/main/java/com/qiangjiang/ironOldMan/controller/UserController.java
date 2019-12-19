@@ -23,18 +23,18 @@ public class UserController {
     private UserService userService;
     @Autowired
     private SendMessageService sendMessageService;
-//    @RequestMapping("/hello")
-//    public void test(){
-//        System.out.println("hello boot");
-//        User user = new User();
-//        user.setPassWord("12345");
-//        user.setToken(UUID.randomUUID().toString());
-//        user.setUserName("系统");
-//        User user1 = userService.add(user);
-//        sendMessageService.userMessage(user1);
-//        System.out.println("user:"+new Gson().toJson(user1));
-//
-//    }
+    @RequestMapping("/hello")
+    public void test(){
+        System.out.println("hello boot");
+        User user = new User();
+        user.setPassWord("12345");
+        user.setToken(UUID.randomUUID().toString());
+        user.setUserName("系统");
+        User user1 = userService.add(user);
+        sendMessageService.userMessage(user1);
+        System.out.println("user:"+new Gson().toJson(user1));
+
+    }
 
     @ApiOperation(value="获取用户详细信息", notes="根据url的id来获取用户详细信息")
     @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Integer", paramType = "path")
