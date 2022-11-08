@@ -5,20 +5,14 @@ public class MyThread01 extends Thread{
     private int num = 1000;
     @Override
     public void run() {
-
-        while(num > 0){
-            System.out.println(getName()+"go ......"+num);
-            num--;
+        while (true){
+            if(num>=0){
+                num--;
+                System.out.println(currentThread().getName()+"----"+num);
+            }
         }
 
     }
 
-    public MyThread01() {
-
-    }
-
-    public MyThread01(String name) {
-        super(name);
-    }
 }
 

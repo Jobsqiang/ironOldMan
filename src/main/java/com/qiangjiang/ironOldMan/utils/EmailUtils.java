@@ -67,7 +67,7 @@ public class EmailUtils {
             javaMailSender.setDefaultEncoding(charset);
             javaMailSender.setProtocol(protocol);
             javaMailSender.setPort(port);
-
+            logger.info("邮箱配置信息 host {} authName {} password {} protocol {} port {}",host , authName , password , protocol , port );
             Properties properties = new Properties();
             properties.setProperty("mail.smtp.auth", auth);
             properties.setProperty("mail.smtp.timeout", timeout);

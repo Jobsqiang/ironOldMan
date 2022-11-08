@@ -12,10 +12,7 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class WmhtUtils {
     private static Logger logger = LoggerFactory.getLogger(WmhtUtils.class);
@@ -122,6 +119,23 @@ public class WmhtUtils {
             shopName = str.substring(0, i);
         }
         return shopName;
+    }
+
+    /**
+     * 获取一定长度的随机字符串
+     *
+     * @param length 指定字符串长度
+     * @return 一定长度的字符串
+     */
+    public static  String getRandomStringByLength(int length) {
+        String base = "abcdefghijklmnopqrstuvwxyz0123456789";
+        Random random = new Random();
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < length; i++) {
+            int number = random.nextInt(base.length());
+            sb.append(base.charAt(number));
+        }
+        return sb.toString();
     }
 
 }
