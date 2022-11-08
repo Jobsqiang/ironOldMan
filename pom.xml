@@ -11,6 +11,7 @@
 	<groupId>com.qiangjiang</groupId>
 	<artifactId>ironOldMan</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>ironOldMan</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -28,6 +29,24 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>2.0.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc</artifactId>
+			<version>11.2.0.4</version>
+		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.oracle</groupId>-->
+<!--			<artifactId>ojdbc14</artifactId>-->
+<!--			<version>11.2.0.4.0</version>-->
+<!--			<scope>runtime</scope>-->
+<!--		</dependency>-->
+
+
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
 
 		<dependency>
 			<groupId>mysql</groupId>
@@ -37,7 +56,7 @@
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>1.3.0</version>
+			<version>2.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -62,24 +81,7 @@
 			<scope>test</scope>
 		</dependency>
 
-
-<!--		<dependency>-->
-<!--			<groupId>com.qiangjiang</groupId>-->
-<!--			<artifactId>poi</artifactId>-->
-<!--			<version>1.0</version>-->
-<!--		</dependency>-->
-		<!--<dependency>-->
-		<!--<groupId>com.hualala.settle</groupId>-->
-		<!--<artifactId>channel-report-interface</artifactId>-->
-		<!--<version>0.1.6-SNAPSHOT<[表情]ersion>-->
-		<!--<scope>compile</scope>-->
-		<!--</dependency>-->
-		<!-- 引入poi，解析workbook视图 -->
-<!--		<dependency>-->
-<!--			<groupId>org.apache.poi</groupId>-->
-<!--			<artifactId>poi</artifactId>-->
-<!--			<version>3.16</version>-->
-<!--		</dependency>-->
+		<!-- poi -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
@@ -117,11 +119,6 @@
 			<version>4.3.5</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.hualala.rpc</groupId>
-			<artifactId>rpc-core-service</artifactId>
-			<version>0.5.8.4-SNAPSHOT</version>
-		</dependency>
 
 		<!-- swagger -->
 		<dependency>
@@ -136,11 +133,6 @@
 			<version>2.6.1</version>
 		</dependency>
 
-		<dependency>
-			<groupId>com.hualala.pay</groupId>
-			<artifactId>pay-interface</artifactId>
-			<version>0.5.5-SNAPSHOT</version>
-		</dependency>
 
 		<!-- javax.mail -->
 		<dependency>
@@ -148,9 +140,126 @@
 			<artifactId>javax.mail</artifactId>
 			<version>1.6.0</version>
 		</dependency>
+		<!--springboot集成jsp-->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<!--支持jspjstl表达式-->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.26</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<!--添加tomcat依赖模块.-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- 使用jsp引擎，springboot内置tomcat没有此依赖 -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+<!--			<scope>provided</scope>-->
+		</dependency>
+
+
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.cloud</groupId>-->
+<!--			<artifactId>spring-cloud-starter</artifactId>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.cloud</groupId>-->
+<!--			<artifactId>spring-cloud-starter-eureka-server</artifactId>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-test</artifactId>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
+
+
+
+<!--		<dependency>-->
+<!--        	<groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-dependencies</artifactId>-->
+<!--            <version>Finchley.RELEASE</version>-->
+<!--            <type>pom</type>-->
+<!--            <scope>import</scope>-->
+<!--        </dependency>-->
+
+
+
+
+		<!-- screw核心 -->
+		<dependency>
+			<groupId>cn.smallbun.screw</groupId>
+			<artifactId>screw-core</artifactId>
+			<version>1.0.3</version>
+		</dependency>
+
+		<!-- HikariCP -->
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+			<version>3.4.5</version>
+		</dependency>
+
+		<!-- mongodb-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-data-mongodb</artifactId>-->
+<!--		</dependency>-->
+
+
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>5.4.0</version>
+		</dependency>
 
 
 	</dependencies>
+
+<!--	<dependencyManagement>-->
+<!--		<dependencies>-->
+<!--			<dependency>-->
+<!--	               <groupId>org.springframework.cloud</groupId>-->
+<!--	               <artifactId>spring-cloud-dependencies</artifactId>-->
+<!--	               <version>Finchley.RELEASE</version>-->
+<!--	               <type>pom</type>-->
+<!--	               <scope>import</scope>-->
+<!--	           </dependency>-->
+<!--		</dependencies>-->
+<!--	</dependencyManagement>-->
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Finchley.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>
@@ -158,7 +267,87 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+
+<!--			<plugin>-->
+<!--				<groupId>cn.smallbun.screw</groupId>-->
+<!--				<artifactId>screw-maven-plugin</artifactId>-->
+<!--				<version>1.0.3</version>-->
+<!--				<dependencies>-->
+<!--					&lt;!&ndash; HikariCP &ndash;&gt;-->
+<!--					<dependency>-->
+<!--						<groupId>com.zaxxer</groupId>-->
+<!--						<artifactId>HikariCP</artifactId>-->
+<!--						<version>3.4.5</version>-->
+<!--					</dependency>-->
+<!--					&lt;!&ndash;mysql driver&ndash;&gt;-->
+<!--					<dependency>-->
+<!--						<groupId>mysql</groupId>-->
+<!--						<artifactId>mysql-connector-java</artifactId>-->
+<!--						<version>8.0.20</version>-->
+<!--					</dependency>-->
+<!--				</dependencies>-->
+<!--				<configuration>-->
+<!--					&lt;!&ndash;username&ndash;&gt;-->
+<!--					<username>srm</username>-->
+<!--					&lt;!&ndash;password&ndash;&gt;-->
+<!--					<password>HandSRM#2019</password>-->
+<!--					&lt;!&ndash;driver&ndash;&gt;-->
+<!--					<driverClassName>oracle.jdbc.driver.OracleDriver</driverClassName>-->
+<!--					&lt;!&ndash;jdbc url&ndash;&gt;-->
+<!--					<jdbcUrl>jdbc:oracle:thin:@10.150.18.144:1521:SRM</jdbcUrl>-->
+<!--					&lt;!&ndash;生成文件类型 HTML、DOC、MD &ndash;&gt;-->
+<!--					<fileType>WORD</fileType>-->
+<!--					&lt;!&ndash;打开文件输出目录&ndash;&gt;-->
+<!--					<openOutputDir>true</openOutputDir>-->
+<!--					&lt;!&ndash;生成模板&ndash;&gt;-->
+<!--					<produceType>freemarker</produceType>-->
+<!--					&lt;!&ndash;文档名称 为空时:将采用[数据库名称-描述-版本号]作为文档名称&ndash;&gt;-->
+<!--&lt;!&ndash;					<docName>测试文档名称</docName>&ndash;&gt;-->
+<!--					&lt;!&ndash;描述&ndash;&gt;-->
+<!--					<description>数据库文档生成</description>-->
+<!--					&lt;!&ndash;版本&ndash;&gt;-->
+<!--					<version>${project.version}</version>-->
+<!--					&lt;!&ndash;标题&ndash;&gt;-->
+<!--					<title>fire数据库文档</title>-->
+<!--				</configuration>-->
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<phase>compile</phase>-->
+<!--						<goals>-->
+<!--							<goal>run</goal>-->
+<!--						</goals>-->
+<!--					</execution>-->
+<!--				</executions>-->
+<!--			</plugin>-->
+
 		</plugins>
+
+<!--		<resources>-->
+<!--			&lt;!&ndash;将src/main/java下的xml文件编译成字节码文件&ndash;&gt;-->
+<!--			<resource>-->
+<!--				<directory>src/main/java</directory>-->
+<!--				<includes>-->
+<!--					<include>**/*.xml</include>-->
+<!--				</includes>-->
+<!--			</resource>-->
+<!--			&lt;!&ndash;将配置文件也编译成字节码文件&ndash;&gt;-->
+<!--			<resource>-->
+<!--				<directory>src/main/resources</directory>-->
+<!--				<includes>-->
+<!--					<include>**/*.*</include>-->
+<!--				</includes>-->
+<!--			</resource>-->
+<!--			&lt;!&ndash;将jsp文件编译成字节码文件&ndash;&gt;-->
+<!--			<resource>-->
+<!--				<directory>src/main/webapp</directory>-->
+<!--				<targetPath>META-INF/resources</targetPath>-->
+<!--				<includes>-->
+<!--					<include>**/*.*</include>-->
+<!--				</includes>-->
+<!--			</resource>-->
+<!--		</resources>-->
+
 	</build>
 
 
@@ -182,33 +371,33 @@
 	</pluginRepositories>
 
 	<repositories>
-		<repository>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<id>public</id>
-			<name>Public Repositories</name>
-			<url>http://repo.hualala.com/nexus/content/groups/Public/</url>
-		</repository>
-		<repository>
-			<id>nexus-snapshots</id>
-			<name>Nexus Snapshot Repository</name>
-			<url>http://repo.hualala.com/nexus/content/repositories/snapshots/</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
+<!--		<repository>-->
+<!--			<snapshots>-->
+<!--				<enabled>true</enabled>-->
+<!--			</snapshots>-->
+<!--			<id>public</id>-->
+<!--			<name>Public Repositories</name>-->
+<!--			<url>http://repo.hualala.com/nexus/content/groups/Public/</url>-->
+<!--		</repository>-->
+<!--		<repository>-->
+<!--			<id>nexus-snapshots</id>-->
+<!--			<name>Nexus Snapshot Repository</name>-->
+<!--			<url>http://repo.hualala.com/nexus/content/repositories/snapshots/</url>-->
+<!--			<snapshots>-->
+<!--				<enabled>false</enabled>-->
+<!--			</snapshots>-->
+<!--		</repository>-->
 	</repositories>
 	<distributionManagement>
-		<repository>
-			<id>nexus-releases</id>
-			<name>Nexus Release Repository</name>
-			<url>http://repo.hualala.com/nexus/content/repositories/releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>nexus-snapshots</id>
-			<name>Nexus Snapshot Repository</name>
-			<url>http://repo.hualala.com/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
+<!--		<repository>-->
+<!--			<id>nexus-releases</id>-->
+<!--			<name>Nexus Release Repository</name>-->
+<!--			<url>http://repo.hualala.com/nexus/content/repositories/releases/</url>-->
+<!--		</repository>-->
+<!--		<snapshotRepository>-->
+<!--			<id>nexus-snapshots</id>-->
+<!--			<name>Nexus Snapshot Repository</name>-->
+<!--			<url>http://repo.hualala.com/nexus/content/repositories/snapshots/</url>-->
+<!--		</snapshotRepository>-->
 	</distributionManagement>
 </project>

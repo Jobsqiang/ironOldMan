@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qiangjiang.ironOldMan.mapper.BpmMapper">
+    <insert id="insert" parameterType="com.qiangjiang.ironOldMan.model.BpmData">
+        INSERT INTO tbl_bpm
+        ( db_field_type,map_type, field_length, isdisplay, validaterule, rowid_, field_type, validatetype, field_default, validatetip, field_title, set_validate, field_name, iscopy, uuid, validateerr, field_nullable, ismodify, display_type)
+        VALUES
+        ( #{db_field_type},#{map_type}, #{field_length}, #{isdisplay}, #{validaterule}, #{rowid}, #{field_type}, #{validatetype}, #{field_default}, #{validatetip}, #{field_title}, #{set_validate}, #{field_name}, #{iscopy}, #{uuid}, #{validateerr}, #{field_nullable}, #{ismodify}, #{display_type})
+    </insert>
+</mapper>

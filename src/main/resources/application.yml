@@ -12,6 +12,19 @@ spring:
     username: root
     password: jiangqiang
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+#    url: jdbc:oracle:thin:@10.150.18.144:1521:SRM
+#    data-username: srm
+#    data-password: HandSRM#2019
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:oracle:thin:@10.150.18.144:1521:SRM
+#    data-username: srm
+#    data-password: HandSRM#2019
+#    driver-class-name: oracle.jdbc.driver.OracleDriver
+#    xa:
+#      properties:
+#        useInformationSchema: true
+
     tomcat:
       max-active: 100
       min-idle: 5
@@ -25,15 +38,25 @@ spring:
     port: 5672
     username: guest
     password: guest
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .html
 pay:
   props:
     wmht:
-      scan-address: http://payapi.mch.weixin.semoor.cn/pay/micropay
+#      scan-address: http://payapi.mch.weixin.semoor.cn/pay/micropay
+#      notify-address: www.baidu.com
+#      expire-time: 90
+#      app-id: wx94d59d7406b6cb82
+#      mch-id: 1458748802
+#      mch-key: hM3gyiQQ2TMKaWSDas4iQABO5y48EAuJ
+      scan-address: https://api.mch.weixin.qq.com/pay/unifiedorder
       notify-address: www.baidu.com
       expire-time: 90
-      app-id: wx94d59d7406b6cb82
-      mch-id: 1458748802
-      mch-key: hM3gyiQQ2TMKaWSDas4iQABO5y48EAuJ
+      app-id: wx68b36032d6fc0045
+      mch-id: 1606861183
+      mch-key: 5bcb9ac02d97c97e73601a7e284632d0
 
 iron:
   notify:
@@ -44,6 +67,7 @@ mail:
   smtp:
     auth: true
     port: 465
+#    port: 25
     timeout: 30000
   send:
     charset: UTF-8
@@ -51,5 +75,7 @@ mail:
     ssl: true
   host: smtp.163.com
   auth:
-    name: jiangdada316@163.com
-    password: jq19920316
+    #name: jiangdada316@163.com
+    #password: jq19920316
+    name: gj1356889@163.com
+    password: EXTTEKJBGIOWEXUZ
